@@ -7,13 +7,13 @@ import './styles/app.css';
 function App() {
 
 	const [section, setSection] = useState({section:"electronics", title:"Electrónica"});
-	 
+	
 	return (
 		<AppProvider context={{setSection}}>
 			<div className='App'>
 				<HeaderBar />
 				<SectionHeader title={section.title} />
-				<h2>Hi, visitor</h2>
+				<h2>Hi, visitor. Showing {section.section==='electronics' ? <i>Electronics section</i> : <i>History section</i>}</h2>
 			</div>
 		</AppProvider>
 	);

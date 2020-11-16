@@ -9,7 +9,7 @@ function Logo() {
     };
 
 	return (
-        <svg width="39px" height="36px" viewBox="0 0 39 36" onClick={handleSectionChange}>
+        <svg className='main-logo' width="39px" height="36px" viewBox="0 0 39 36" onClick={handleSectionChange}>
             <defs>
                 <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
                     <stop stopColor="#FF8800" offset="0%"></stop>
