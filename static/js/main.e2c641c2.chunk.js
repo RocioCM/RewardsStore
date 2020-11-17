@@ -1,2 +1,0 @@
-(this["webpackJsonpstore-rocio-corral"]=this["webpackJsonpstore-rocio-corral"]||[]).push([[0],{10:function(r,e,t){"use strict";t.r(e);var c=t(0),o=t(1),n=t.n(o),i=t(3),s=t.n(i);t(9);var a=function(){return Object(c.jsx)("div",{className:"App",children:Object(c.jsx)("h1",{children:"Hi, visitor"})})};s.a.render(Object(c.jsx)(n.a.StrictMode,{children:Object(c.jsx)(a,{})}),document.getElementById("root"))},9:function(r,e,t){}},[[10,1,2]]]);
-//# sourceMappingURL=main.e2c641c2.chunk.js.map
