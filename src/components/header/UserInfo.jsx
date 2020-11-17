@@ -1,9 +1,9 @@
-import {useState, useContext} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import {AppContext} from '../../ContextProvider';
 import UserService from '../../services/userService';
 import CoinsModal from './CoinsModal';
-
-function UserInfo() {
+ 
+function UserInfo() { 
 	
 	const {setSection} = useContext(AppContext);
 	const [userInfo, setUserInfo] = useState({username:'', coins:0});
@@ -11,7 +11,7 @@ function UserInfo() {
 
 	const getUserInfo = async () => {
 		let user = await UserService.getUser();
-		///console.log(user);
+		console.log(user);
 		setUserInfo({username: user.name, coins: user.points});
 	}
 
@@ -23,9 +23,7 @@ function UserInfo() {
 		setSection({section:'history', title:'Historial'});
 	}
 
-	if (userInfo.username==='') {
-		getUserInfo();
-	}
+	useEffect(() => getUserInfo(),[]); //componentDidMount
 
 	return <div className='user-info'>
 		<h3 className='username' onClick={showHistory}>
