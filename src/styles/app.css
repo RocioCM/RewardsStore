@@ -1,0 +1,42 @@
+:root {
+	font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Droid Sans', Helvetica,
+		sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+#root {
+	width: 100vw;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+	:root {
+		font-size: 14px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	:root {
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 1440px) {
+	:root {
+		font-size: 18px;
+	}
+}
