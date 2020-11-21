@@ -11,7 +11,7 @@ function UserInfo() {
 
 	const getUserInfo = async () => {
 		let user = await UserService.getUser();
-		console.log(user);
+		console.log(user); ///
 		setUserInfo({username: user.name, coins: user.points});
 	}
 
