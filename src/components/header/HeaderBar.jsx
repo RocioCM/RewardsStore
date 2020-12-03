@@ -1,10 +1,10 @@
 import UserInfo from './UserInfo';
-import Logo from './Logo';
+import logo from '../../assets/aerolab-logo.svg';
 import '../../styles/header.css';
 
 function HeaderBar() {
 	return <header className='header-bar'>
-		<Logo />
+		<img src={logo} alt="aerolab logo" />
 		<UserInfo />
 	</header>;
 }

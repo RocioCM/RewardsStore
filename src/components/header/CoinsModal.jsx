@@ -7,7 +7,7 @@ function CoinsModal({show, handleShow}) {
 	const hideModal = () => handleShow(false);
 
 	async function addCoins(amount) {
-		let resp = await UserService.addCoins(amount);
+		let resp = await UserService.postCoins(amount);
 		console.log(resp);
 		alert("Se agregaron "+ amount +" moneditas.")
 		hideModal();

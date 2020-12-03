@@ -31,7 +31,7 @@ class ProductsService {
 		}
 	}
 
-	static async addCoins(productId) {
+	static async postRedeem(productId) {
 		const params = {
 			method: 'post',
 			mode: 'cors',

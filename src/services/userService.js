@@ -11,14 +11,14 @@ class UserService {
 			let resp = await fetch(
 				"https://coding-challenge-api.aerolab.co/user/me", {headers});
 			resp = await resp.json();
-			///console.log(resp);
+			// console.log(resp); ///
 			return resp;
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
-	static async addCoins(amount) {
+	static async postCoins(amount) {
 		const params = {
 			method: 'post',
 			mode: 'cors',
