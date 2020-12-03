@@ -1,0 +1,72 @@
+/*--MAIN-SECTION-STYLES--*/
+
+.main-section {
+	background-color: rgb(250, 250, 250); /*fafafa*/
+	padding: 1rem 3rem;
+}
+.cards-ctn {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/*--CONTROLS-BAR-STYLES--*/
+
+.controls-bar {
+	width: 100%;
+	height: 5rem;
+	margin: 1rem auto;
+	border-bottom: 2px solid gainsboro;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sort-controls-ctn {
+	border-left: 2px solid gainsboro;
+	padding-left: 1rem;
+	line-height: 2.5rem;
+	width: 80%;
+}
+
+.sort-option-btn {
+	line-height: 1.3rem;
+	padding: 0.5rem 1rem;
+	margin: 0 0.5rem;
+	background-color: #0ad4fa;
+	color: white;
+	border-radius: 1rem;
+	border: none;
+}
+/*--ARROWS--*/
+.arrow-icon {
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	border-radius: 50%;
+	border: 1px solid gainsboro;
+	color: gainsboro;
+	display: inline-block;
+}
+.arrow-icon:hover {
+	background-color: white;
+}
+
+/*--CARDS--*/
+
+.product-card {
+	width: 20%;
+	min-width: 300px;
+	background-color: #ffffff;
+	text-align: center;
+	margin: 0.5rem;
+	padding: 1rem;
+}
+.product-card > img {
+	width: 100%;
+}
+.product-card > .product-category::before {
+	content: '';
+	display: block;
+	border: 0.5px solid gainsboro;
+}

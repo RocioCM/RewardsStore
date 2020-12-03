@@ -1,21 +1,20 @@
+import {useState} from 'react';
 import Controls from './Controls';
 import SortControl from './SortControl';
-import Card from './Card';
-import '../../styles/main.css';
+import Cards from './Cards';
+import '../../styles/gallery.css';
 
-function Gallery(props) {
-	//Este componente renderiza las dos barras de controles y CardsCtn. El map que está ahí, debería ser la llamada a CardCtn con products.
-	//La lista de products después la va a obtener por el context, no por props.
+function Gallery() {
+	const [pageParams, setPageParams] = useState({page: 0, total: 0});
 	return (
 		<section className='main-section'>
-			<Controls>
+			<Controls products={pageParams}>
 				<SortControl />
 			</Controls>
-			{props.products.map(product => <Card product={product} />)}
-			<Controls />
+			<Cards handlePage={setPageParams} />
+			<Controls products={pageParams} />
 		</section>
 	);
-	
 }
 
 export default Gallery;

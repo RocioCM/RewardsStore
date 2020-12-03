@@ -23,13 +23,14 @@ function App() {
 		if (products) setProducts(products);
 	}
 
+	//eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => getProducts(),[section]);
 
 	return (
-		<AppProvider context={{products, setSection}}>
+		<AppProvider context={{products, setSection, setProducts}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
-			<Gallery products={products} />
+			<Gallery />
 		</AppProvider>
 	);
 }

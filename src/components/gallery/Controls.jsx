@@ -1,12 +1,14 @@
+import ArrowIcon from './ArrowIcon';
 
-function Controls({children}) {
-	//Los children son los filtritos.
-	//Esto lleva un display flex con space-between.
+function Controls({products, children}) {
+	///Los children son los filtritos.
+	///Esto lleva un display flex con space-between.
+	const shownProducts = Math.min(16*products.page, products.total);
 	return (
 		<div className='controls-bar'>
-			<span>16 of 32 products</span>
+			<span>{shownProducts} de {products.total} productos</span>
 			{children}
-			<span>{"(<) (>)"}</span>
+			<div><ArrowIcon/><ArrowIcon/></div>
 		</div>
 	)
 }
