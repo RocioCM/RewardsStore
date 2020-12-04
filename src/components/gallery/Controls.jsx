@@ -8,7 +8,10 @@ function Controls({products, children}) {
 		<div className='controls-bar'>
 			<span>{shownProducts} de {products.total} productos</span>
 			{children}
-			<div><ArrowIcon/><ArrowIcon/></div>
+			<div>
+				<ArrowIcon className="left" />
+				<ArrowIcon className="right" />
+			</div>
 		</div>
 	)
 }
