@@ -2,11 +2,15 @@
 
 .main-section {
 	background-color: #fafafa;
-	padding: 1rem 3rem;
+	padding: 1rem;
+	width: 100%;
 }
 .cards-ctn {
-	display: flex;
-	flex-flow: row wrap;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.4rem;
+	width: 100%;
+	justify-items: center;
 }
 
 /*--CONTROLS-BAR-STYLES--*/
@@ -48,11 +52,10 @@
 /*--CARDS--*/
 
 .product-card {
-	width: 20%;
-	min-width: 290px;
+	width: 100%;
+	max-width: 300px;
 	background-color: #ffffff;
 	text-align: center;
-	margin: 0.7rem;
 	padding: 1.5rem;
 	box-shadow: 3px 3px 5px -2px #c8c8c8;
 	position: relative;
@@ -93,8 +96,8 @@
 	right: 0.5rem;
 	z-index: 10;
 }
-.coins-left-msg > img {
-	margin-left: 7px;
+.coin-icon {
+	margin-left: 0.4rem;
 }
 .buy-icon .circle {
 	fill: #0AD4FA;
@@ -149,4 +152,31 @@
 	background-color: white;
 	border: none;
 	border-radius: 1.5rem;
+}
+
+@media screen and (min-width: 580px) {
+	.main-section {
+		padding: 1rem 2rem;
+	}
+	.cards-ctn {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-section {
+		padding: 1rem 4rem;
+	}
+	.cards-ctn {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.main-section {
+		padding: 1rem 5rem;
+	}
+	.cards-ctn {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

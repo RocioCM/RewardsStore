@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import CardOverlay from './CardOverlay';
 import BuyIcon from './BuyIcon';
-import coinIcon from '../../assets/icons/coin.svg';
+import coinIcon from '../../assets/coin.svg';
 import ProductsService from '../../services/productsService';
 import { AppContext } from '../../ContextProvider';
 
@@ -18,7 +18,7 @@ function Card({product}) {
 	}
 	return (
 		<article className='product-card'>
-			{(redeemAllowed || section==='history') ? <BuyIcon /> : <div className='coins-left-msg'>Necesitas {cost-coins}<img src={coinIcon} alt="coin"/></div>}
+			{(redeemAllowed || section==='history') ? <BuyIcon /> : <div className='coins-left-msg'>Necesitas {cost-coins}<img className="coin-icon" src={coinIcon} alt="coin"/></div>}
 			<img src={url} alt={name}/>
 			<h4 className="product-category">{category}</h4>
 			<h4 className="product-name">{name}</h4>
