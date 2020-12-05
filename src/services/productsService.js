@@ -1,36 +1,49 @@
-class UserService {
+class ProductsService {
 	static headers = {
 		"Content-Type": "application/json",
 		"Accept": "application/json",
 		"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFjMjQ0OWI5NTIzZTAwMjA3ZTFmYzMiLCJpYXQiOjE2MDUxMTcwMDF9.vHMYlEKnpSVDSejVVyittmqUhIQ9pbD2U5CvqwQYJ4I",
 	};
 
-	static async getUser() {
+	static async getProducts() {
 		const headers = this.headers;
 		try {
 			let resp = await fetch(
-				"https://coding-challenge-api.aerolab.co/user/me", {headers});
+				"https://coding-challenge-api.aerolab.co/products", {headers});
 			resp = await resp.json();
-			// console.log(resp); ///
+			console.log(resp); ///
 			return resp;
 		} catch (error) {
 			console.log(error);
 		}
 	}
 
-	static async postCoins(amount) {
+	static async getHistory() {
+		const headers = this.headers;
+		try {
+			let resp = await fetch(
+				"https://private-anon-20e65f592c-aerolabchallenge.apiary-mock.com/user/history", {headers});
+			resp = await resp.json();
+			console.log(resp); ///
+			return resp;
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	static async postRedeem(productId) {
 		const params = {
 			method: 'post',
 			mode: 'cors',
 			headers: this.headers, 
 			body: {
-				amount
+				productId
 			}
 		};
 		console.log(params); ///
 		try {
 			let resp = await fetch( 
-				"https://coding-challenge-api.aerolab.co/user/points", params);
+				"https://coding-challenge-api.aerolab.co/redeem", params);
 			console.log(resp); ///
 			resp = await resp.json();
 			return resp;
@@ -40,4 +53,4 @@ class UserService {
 	}
 }
 
-export default UserService;
+export default ProductsService;

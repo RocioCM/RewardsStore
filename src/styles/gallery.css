@@ -1,0 +1,152 @@
+/*--MAIN-SECTION-STYLES--*/
+
+.main-section {
+	background-color: #fafafa;
+	padding: 1rem 3rem;
+}
+.cards-ctn {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/*--CONTROLS-BAR-STYLES--*/
+
+.controls-bar {
+	width: 100%;
+	height: 5rem;
+	margin: 1rem auto;
+	border-bottom: 2px solid gainsboro;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sort-controls-ctn {
+	border-left: 2px solid gainsboro;
+	padding-left: 1rem;
+	line-height: 2.5rem;
+	width: 80%;
+}
+
+.sort-option-btn {
+	line-height: 1.3rem;
+	padding: 0.5rem 1rem;
+	margin: 0 0.5rem;
+	background-color: #0ad4fa;
+	color: white;
+	border-radius: 1rem;
+	border: none;
+}
+/*--ARROWS--*/
+.arrow-icon:hover #Oval-4 {
+	fill: white;
+}
+.arrow-icon.right {
+	transform: rotate(180deg);
+}
+
+/*--CARDS--*/
+
+.product-card {
+	width: 20%;
+	min-width: 290px;
+	background-color: #ffffff;
+	text-align: center;
+	margin: 0.7rem;
+	padding: 1.5rem;
+	box-shadow: 3px 3px 5px -2px #c8c8c8;
+	position: relative;
+}
+.product-card > img {
+	width: 100%;
+}
+.product-card > .product-category::before {
+	content: '';
+	display: block;
+	border: 0.5px solid gainsboro;
+	margin-bottom: 1rem;
+}
+.product-card > h4 {
+	font-weight: 400;
+	margin: 0;
+	line-height: 1.4rem;
+	text-align: left;
+}
+.product-card > .product-category {
+	color: gray;
+}
+.product-card > .coins-left-msg {
+	color: white;
+	background-color: #464343BF;
+	padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+	width: max-content;
+	border-radius: 2rem;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
+.product-card > .buy-icon {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	z-index: 10;
+}
+.coins-left-msg > img {
+	margin-left: 7px;
+}
+.buy-icon .circle {
+	fill: #0AD4FA;
+}
+.buy-icon .bag-icon {
+	fill: #FFFFFF;
+}
+
+.product-card:hover {
+	transform: translate(-2px, -7px);
+	box-shadow: 8px 10px 18px 3px rgb(170, 170, 170);
+}
+.product-card:hover > .buy-icon .circle {
+	fill: #FFFFFF;
+}
+.product-card:hover > .buy-icon .bag-icon {
+	fill: #0AD4FA;
+}
+.product-card:hover > .card-overlay {
+	display: initial;
+}
+
+.card-overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #0ad2facc;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.card-overlay > .price {
+	color: white;
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin-top: 33%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card-overlay .coin-icon {
+	height: 2.5rem;
+	width: 2.5rem;
+}
+.card-overlay > .redeem-btn {
+	width: 80%;
+	margin: 0.5rem auto;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 2.7rem;
+	color: gray;
+	background-color: white;
+	border: none;
+	border-radius: 1.5rem;
+}
