@@ -22,7 +22,7 @@ class ProductsService {
 		const headers = this.headers;
 		try {
 			let resp = await fetch(
-				"https://coding-challenge-api.aerolab.co/user/history", {headers});
+				"https://private-anon-20e65f592c-aerolabchallenge.apiary-mock.com/user/history", {headers});
 			resp = await resp.json();
 			console.log(resp); ///
 			return resp;

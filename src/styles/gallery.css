@@ -75,11 +75,26 @@
 .product-card > .product-category {
 	color: gray;
 }
+.product-card > .coins-left-msg {
+	color: white;
+	background-color: #464343BF;
+	padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+	width: max-content;
+	border-radius: 2rem;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
 .product-card > .buy-icon {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
 	z-index: 10;
+}
+.coins-left-msg > img {
+	margin-left: 7px;
 }
 .buy-icon .circle {
 	fill: #0AD4FA;

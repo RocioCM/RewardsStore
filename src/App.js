@@ -25,9 +25,10 @@ function App() {
 
 	//eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => getProducts(),[section]);
+	useEffect(() => setProducts(products), [products]); //Esto tampoco funciona para el sort :c
 
 	return (
-		<AppProvider context={{products, setSection, setProducts}}>
+		<AppProvider context={{coins: 1800, products, setProducts, section: section.section, setSection}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
 			<Gallery />
