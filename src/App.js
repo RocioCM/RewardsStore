@@ -8,7 +8,7 @@ import './styles/app.css';
 function App() {
 	const [section, setSection] = useState({section:"electronics", title:"Electrónica"});
 	return (
-		<AppProvider context={{coins: 1000, section: section.section, setSection}}>
+		<AppProvider context={{coins: 1000, setSection}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
 			<Gallery section={section.section} />

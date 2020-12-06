@@ -23,7 +23,7 @@ function Gallery({section}) {
 	}
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	useEffect(() => getProducts(),[]); //ComponentDidMount
+	useEffect(() => getProducts(),[section]); //ComponentDidMount
 
 	return (
 		<section className='main-section'>

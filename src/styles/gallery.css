@@ -36,10 +36,14 @@
 	line-height: 1.3rem;
 	padding: 0.5rem 1rem;
 	margin: 0 0.5rem;
-	background-color: #0ad4fa;
-	color: white;
+	background-color: #f0f0f0;
+	color: gray;
 	border-radius: 1rem;
 	border: none;
+}
+.sort-option-btn.active {
+	background-color: #0ad4fa;
+	color: white;
 }
 /*--ARROWS--*/
 .arrow-icon:hover #Oval-4 {
@@ -61,7 +65,10 @@
 	position: relative;
 }
 .product-card > img {
+	display: block;
 	width: 100%;
+	line-height: 11rem;
+	min-height: 11rem;
 }
 .product-card > .product-category::before {
 	content: '';
