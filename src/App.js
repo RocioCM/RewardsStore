@@ -14,7 +14,7 @@ function App() {
 	});
 
 	return (
-		<AppProvider context={{setSection}}>
+		<AppProvider context={{section, setSection}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
 			<Gallery section={section} />
