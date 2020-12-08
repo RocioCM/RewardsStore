@@ -11,17 +11,20 @@ function SortControl({products, setProducts}) {
 	};
 
 	return (
-		<p className='sort-controls-ctn'>
-			Ordenar por:
-			{filtersParams.map(({callback, wording}, i) => (
-				<button
-					className={`sort-option-btn ${activeFilter === i ? 'active' : ''}`}
-					onClick={() => sortProducts(i, callback)}
-				>
-					{wording}
-				</button>
-			))}
-		</p>
+		<div className='sort-controls-ctn'>
+			<p>
+				Ordenar por:
+				{filtersParams.map(({callback, wording}, i) => (
+					<button
+						key={i}
+						className={`sort-option-btn ${activeFilter === i ? 'active' : ''}`}
+						onClick={() => sortProducts(i, callback)}
+					>
+						{wording}
+					</button>
+				))}
+			</p>
+		</div>
 	);
 }
 
