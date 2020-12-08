@@ -1,41 +1,36 @@
-import {useState, useEffect, useContext} from 'react';
+import {useState, useContext} from 'react';
 import {AppContext} from '../../ContextProvider';
 import CoinsModal from './CoinsModal';
-import UserService from '../../services/userService';
 import coinIcon from '../../assets/coin.svg';
- 
-function UserInfo() { 
-	
-	const {setSection} = useContext(AppContext);
-	const [userInfo, setUserInfo] = useState({username:'', coins:0});
+import UserService from '../../services/userService';
+
+function UserInfo() {
+	const {setSection, username, coins} = useContext(AppContext);
 	const [showModal, setShowModal] = useState(false);
 
-	const getUserInfo = async () => {
-		let user = await UserService.getUser();
-		console.log(user); ///
-		setUserInfo({username: user.name, coins: user.points});
-	}
-
-	const showCoinsModal = () => {
-		setShowModal(true);
-	}
+	const showCoinsModal = () => setShowModal(true);
+	const hideCoinsModal = () => setShowModal(false);
 
 	const showHistory = () => {
-		setSection({section:'history', title:'Historial'});
-	}
+		setSection({
+			section: 'history',
+			title: 'Historial',
+			getProducts: UserService.getHistory,
+		});
+	};
 
-	useEffect(() => getUserInfo(),[]); //componentDidMount
-
-	return <div className='user-info'>
-		<h3 className='username' onClick={showHistory}>
-			{userInfo.username}
-		</h3>
-		<h3 title="Add coins" className='user-coins' onClick={showCoinsModal}>
-		<span>{userInfo.coins}</span>
-		<img className="coin-icon" src={coinIcon} alt="coin"/>
-		</h3>
-		<CoinsModal show={showModal} handleShow={setShowModal} />
-	</div>;
+	return (
+		<div className='user-info'>
+			<h3 className='username' onClick={showHistory}>
+				{username}
+			</h3>
+			<h3 title='Add coins' className='user-coins' onClick={showCoinsModal}>
+				<span>{coins}</span>
+				<img className='coin-icon' src={coinIcon} alt='coin' />
+			</h3>
+			<CoinsModal show={showModal} handleHide={hideCoinsModal} />
+		</div>
+	);
 }
 
 export default UserInfo;

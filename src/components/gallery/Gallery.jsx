@@ -2,28 +2,20 @@ import {useState, useEffect} from 'react';
 import Controls from './Controls';
 import SortControl from './SortControl';
 import Cards from './Cards';
-import ProductsService from '../../services/productsService';
 import '../../styles/gallery.css';
 
 function Gallery({section}) {
-
 	const [products, setProducts] = useState([]);
 	const [pageParams, setPageParams] = useState({page: 0, total: 0});
 
-	const getProducts = async () => {
-		let products = null;
-		switch (section) {
-			case ('history'):
-				products = await ProductsService.getHistory();
-				break;
-			default:
-				products = await ProductsService.getProducts();
-		};
+	const getSectionProducts = async () => {
+		const products = await section.getProducts();
+		console.log(products); ///
 		setProducts(products);
-	}
+	};
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	useEffect(() => getProducts(),[section]); //ComponentDidMount
+	useEffect(() => getSectionProducts(), [section]);
 
 	return (
 		<section className='main-section'>
