@@ -1,32 +1,50 @@
-import React, { useContext } from 'react';
+import React, {useState, useContext} from 'react';
 import CardOverlay from './CardOverlay';
 import BuyIcon from './BuyIcon';
 import coinIcon from '../../assets/coin.svg';
 import ProductsService from '../../services/productsService';
-import { AppContext } from '../../ContextProvider';
+import {AppContext} from '../../ContextProvider';
 
 function Card({product}) {
-
-	const {_id, category, name, cost, img: {url}} = product;
+	const {
+		_id,
+		category,
+		name,
+		cost,
+		img: {url},
+	} = product;
 	const {coins, section} = useContext(AppContext);
-	const redeemAllowed = cost<=coins;
+	const [activeCard, setActiveCard] = useState(false);
+	const redeemAllowed = cost <= coins;
 
 	const redeemProduct = async () => {
 		const resp = await ProductsService.postRedeem(_id);
 		console.log(resp); ///
-		alert("Producto canjeado exitosamente (mentira) :D");
-	}
+		alert('Producto canjeado exitosamente (mentira) :D');
+	};
+
 	return (
-		<article className='product-card'>
-			{(redeemAllowed || section==='history') ? <BuyIcon /> : <div className='coins-left-msg'>Necesitas {cost-coins}<img className="coin-icon" src={coinIcon} alt="coin"/></div>}
-			<img src={url} alt={name}/>
-			<h4 className="product-category">{category}</h4>
-			<h4 className="product-name">{name}</h4>
-			{
-				section!=='history' && redeemAllowed &&
+		<article
+			className={`product-card ${activeCard ? 'active' : ''}`}
+			onClick={() => setActiveCard(true)}
+			onPointerLeave={() => setActiveCard(false)}
+		>
+			{redeemAllowed || section === 'history' ? (
+				<BuyIcon />
+			) : (
+				<div className='coins-left-msg'>
+					Necesitas {cost - coins}
+					<img className='coin-icon' src={coinIcon} alt='coin' />
+				</div>
+			)}
+			<img src={url} alt={name} />
+			<h4 className='product-category'>{category}</h4>
+			<h4 className='product-name'>{name}</h4>
+			{section !== 'history' && redeemAllowed && (
 				<CardOverlay cost={cost} handleClick={redeemProduct} />
-			}
-		</article>);
+			)}
+		</article>
+	);
 }
 
 export default Card;

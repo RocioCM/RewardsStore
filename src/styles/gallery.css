@@ -11,6 +11,7 @@
 	gap: 1.4rem;
 	width: 100%;
 	justify-items: center;
+	margin-top: 3rem;
 }
 
 /*--CONTROLS-BAR-STYLES--*/
@@ -20,16 +21,28 @@
 	height: 5rem;
 	margin: 1rem auto;
 	border-bottom: 2px solid gainsboro;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template: 1fr / max-content auto max-content;
 	align-items: center;
+	position: relative;
+}
+.controls-bar:first-child {
+	padding-bottom: 8rem;
+}
+
+.gallery-paging {
+	margin-right: 1rem;
 }
 
 .sort-controls-ctn {
-	border-left: 2px solid gainsboro;
-	padding-left: 1rem;
-	line-height: 2.5rem;
-	width: 80%;
+	position: absolute;
+	bottom: 0rem;
+	left: 0;
+	width: 100%;
+	overflow-x: scroll;
+}
+.sort-controls-ctn > p {
+	width: max-content;
 }
 
 .sort-option-btn {
@@ -45,7 +58,14 @@
 	background-color: #0ad4fa;
 	color: white;
 }
+
 /*--ARROWS--*/
+.arrows-ctn {
+	justify-self: end;
+}
+.arrow-icon {
+	margin: 0.1rem;
+}
 .arrow-icon:hover #Oval-4 {
 	fill: white;
 }
@@ -87,7 +107,7 @@
 }
 .product-card > .coins-left-msg {
 	color: white;
-	background-color: #464343BF;
+	background-color: #464343bf;
 	padding: 0.5rem 0.5rem 0.5rem 0.8rem;
 	width: max-content;
 	border-radius: 2rem;
@@ -107,23 +127,23 @@
 	margin-left: 0.4rem;
 }
 .buy-icon .circle {
-	fill: #0AD4FA;
+	fill: #0ad4fa;
 }
 .buy-icon .bag-icon {
-	fill: #FFFFFF;
+	fill: #ffffff;
 }
 
-.product-card:hover {
+.product-card.active {
 	transform: translate(-2px, -7px);
 	box-shadow: 8px 10px 18px 3px rgb(170, 170, 170);
 }
-.product-card:hover > .buy-icon .circle {
-	fill: #FFFFFF;
+.product-card.active > .buy-icon .circle {
+	fill: #ffffff;
 }
-.product-card:hover > .buy-icon .bag-icon {
-	fill: #0AD4FA;
+.product-card.active > .buy-icon .bag-icon {
+	fill: #0ad4fa;
 }
-.product-card:hover > .card-overlay {
+.product-card.active > .card-overlay {
 	display: initial;
 }
 
@@ -179,11 +199,39 @@
 	}
 }
 
+@media screen and (min-width: 900px) {
+	.controls-bar:first-child {
+		padding-bottom: 0;
+	}
+	.sort-controls-ctn {
+		position: initial;
+		overflow: initial;
+	}
+	.sort-controls-ctn > p {
+		line-height: 2.5rem;
+		padding-left: 1rem;
+		border-left: 2px solid gainsboro;
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	.main-section {
 		padding: 1rem 5rem;
 	}
 	.cards-ctn {
 		grid-template-columns: repeat(4, 1fr);
+	}
+	.product-card:hover {
+		transform: translate(-2px, -7px);
+		box-shadow: 8px 10px 18px 3px rgb(170, 170, 170);
+	}
+	.product-card:hover > .buy-icon .circle {
+		fill: #ffffff;
+	}
+	.product-card:hover > .buy-icon .bag-icon {
+		fill: #0ad4fa;
+	}
+	.product-card:hover > .card-overlay {
+		display: initial;
 	}
 }

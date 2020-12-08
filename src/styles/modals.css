@@ -12,13 +12,13 @@
 	max-width: 700px;
 	background-color: rgb(248, 248, 248);
 	border-radius: 10px;
-	padding: 2rem 1rem;
+	padding: 1rem 1rem 2rem;
 	margin: 5rem auto 0;
 	position: relative;
 }
 
 .modal > header > h2 {
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	font-weight: 400;
 	line-height: 2rem;
 	margin-bottom: 1rem;
@@ -26,8 +26,8 @@
 
 .modal > .quit-btn {
 	position: absolute;
-	top: 2rem;
-	right: 2rem;
+	top: 1rem;
+	right: 1rem;
 	border: none;
 	border-radius: 50%;
 	height: 2rem;
@@ -35,6 +35,9 @@
 	background-color: rgb(180, 180, 180);
 	color: white;
 	font-weight: 800;
+}
+.modal > .quit-btn:hover {
+	background-color: red;
 }
 
 .modal .coins-btns-ctn {
@@ -51,8 +54,8 @@
 	color: rgb(47, 44, 61);
 	background-color: white;
 	box-shadow: 5px 5px 5px -2px rgb(180, 180, 180);
-	font-size: 1.5rem;
-	font-weight: 500;
+	font-size: 1.1rem;
+	font-weight: 400;
 }
 .coins-btns-ctn > button:hover {
 	transform: translate(-2px, -2px);
@@ -62,15 +65,24 @@
 .coins-btns-ctn .coin-icon {
 	display: block;
 	margin: 0.3rem auto;
-	height: 4rem;
-	width: 4rem; 
+	height: 2.5rem;
+	width: 2.5rem; 
 }
 
 @media screen and (min-width: 1024px) {
 	.modal {
 		padding: 2rem;
 	}
+	.modal > header > h2 {
+		font-size: 1.8rem;
+	}
 	.modal .coins-btns-ctn > button {
 		height: 20vh;
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+	.coins-btns-ctn .coin-icon {
+		height: 4rem;
+		width: 4rem; 
 	}
 }
