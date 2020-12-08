@@ -1,9 +1,11 @@
 import React, {useState, useContext} from 'react';
+import {AppContext} from '../../ContextProvider';
 import CardOverlay from './CardOverlay';
+import SuccessModal from './SuccessModal';
+import FailModal from './FailModal';
+import ProductsService from '../../services/productsService';
 import BuyIcon from './BuyIcon';
 import coinIcon from '../../assets/coin.svg';
-import ProductsService from '../../services/productsService';
-import {AppContext} from '../../ContextProvider';
 
 function Card({product}) {
 	const {
@@ -21,7 +23,7 @@ function Card({product}) {
 		const resp = await ProductsService.postRedeem(_id);
 		console.log(resp); ///
 		alert('Producto canjeado exitosamente (mentira) :D');
-		updateUserInfo();
+		if (resp) updateUserInfo();
 	};
 
 	return (
@@ -34,7 +36,7 @@ function Card({product}) {
 				<BuyIcon />
 			) : (
 				<div className='coins-left-msg'>
-					Necesitas {cost - coins}
+					Te faltan {cost - coins}
 					<img className='coin-icon' src={coinIcon} alt='coin' />
 				</div>
 			)}
@@ -44,6 +46,8 @@ function Card({product}) {
 			{section.id !== 'history' && redeemAllowed && (
 				<CardOverlay cost={cost} handleClick={redeemProduct} />
 			)}
+			<SuccessModal />
+			{/* <FailModal /> */}
 		</article>
 	);
 }

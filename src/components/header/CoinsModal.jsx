@@ -20,7 +20,7 @@ function CoinsModal({show, handleHide}) {
 
 	return (
 		<div className='modal-screen' style={{display: show ? 'initial' : 'none'}}>
-			<section className='modal'>
+			<section className='modal coins-modal'>
 				<button className='quit-btn' onClick={handleHide}>
 					<FontAwesomeIcon icon={faTimes} />
 				</button>
