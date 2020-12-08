@@ -1,7 +1,8 @@
 import {useState, useEffect, useContext} from 'react';
 import {AppContext} from '../../ContextProvider';
-import UserService from '../../services/userService';
 import CoinsModal from './CoinsModal';
+import UserService from '../../services/userService';
+import coinIcon from '../../assets/coin.svg';
  
 function UserInfo() { 
 	
@@ -29,9 +30,9 @@ function UserInfo() {
 		<h3 className='username' onClick={showHistory}>
 			{userInfo.username}
 		</h3>
-		<h3 className='user-coins' onClick={showCoinsModal}>
+		<h3 title="Add coins" className='user-coins' onClick={showCoinsModal}>
 		<span>{userInfo.coins}</span>
-		<i className='coin-icon'></i>
+		<img className="coin-icon" src={coinIcon} alt="coin"/>
 		</h3>
 		<CoinsModal show={showModal} handleShow={setShowModal} />
 	</div>;

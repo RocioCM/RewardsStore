@@ -15,6 +15,7 @@ class ProductsService {
 			return resp;
 		} catch (error) {
 			console.log(error);
+			return [];
 		}
 	}
 
@@ -28,6 +29,7 @@ class ProductsService {
 			return resp;
 		} catch (error) {
 			console.log(error);
+			return [];
 		}
 	}
 
@@ -49,6 +51,7 @@ class ProductsService {
 			return resp;
 		} catch (error) {
 			console.log(error);
+			return false;
 		}
 	}
 }

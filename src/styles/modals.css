@@ -19,6 +19,7 @@
 
 .modal > header > h2 {
 	font-size: 1.8rem;
+	font-weight: 400;
 	line-height: 2rem;
 	margin-bottom: 1rem;
 }
@@ -47,9 +48,10 @@
 	width: 100%;
 	border-radius: 10px;
 	border: none;
+	color: rgb(47, 44, 61);
 	background-color: white;
 	box-shadow: 5px 5px 5px -2px rgb(180, 180, 180);
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 }
 .coins-btns-ctn > button:hover {
@@ -57,12 +59,11 @@
 	box-shadow: 5px 5px 8px -2px rgb(180, 180, 180);
 }
 
-span.coin-icon {
+.coins-btns-ctn .coin-icon {
 	display: block;
-	margin: 0 auto;
-	height: 2.3rem;
-	width: 2.3rem;
-	background-size: cover;
+	margin: 0.3rem auto;
+	height: 4rem;
+	width: 4rem; 
 }
 
 @media screen and (min-width: 1024px) {

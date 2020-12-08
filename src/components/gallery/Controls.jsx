@@ -1,16 +1,16 @@
 import ArrowIcon from './ArrowIcon';
 
-function Controls({products, children}) {
+function Controls({pageParams, children}) {
 	///Los children son los filtritos.
 	///Esto lleva un display flex con space-between.
-	const shownProducts = Math.min(16*products.page, products.total);
+	const shownProducts = Math.min(16*pageParams.page, pageParams.total);
 	return (
 		<div className='controls-bar'>
-			<span>{shownProducts} de {products.total} productos</span>
+			<span>{shownProducts} de {pageParams.total} productos</span>
 			{children}
 			<div>
-				<ArrowIcon className="left" />
-				<ArrowIcon className="right" />
+				<ArrowIcon className="left" onClick={()=>console.log("Next page")} />
+				<ArrowIcon className="right" onClick={()=>console.log("Previous page")} />
 			</div>
 		</div>
 	)

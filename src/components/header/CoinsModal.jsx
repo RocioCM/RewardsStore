@@ -1,5 +1,6 @@
 import React from 'react';
 import UserService from '../../services/userService';
+import coinIcon from '../../assets/coin.svg';
 import '../../styles/modals.css';
 
 function CoinsModal({show, handleShow}) {
@@ -8,7 +9,7 @@ function CoinsModal({show, handleShow}) {
 
 	async function addCoins(amount) {
 		let resp = await UserService.postCoins(amount);
-		console.log(resp);
+		console.log(resp); ///
 		alert("Se agregaron "+ amount +" moneditas.")
 		hideModal();
 	};
@@ -22,13 +23,13 @@ function CoinsModal({show, handleShow}) {
 				</header>
 				<div className='coins-btns-ctn'>
 					<button onClick={() => addCoins(1000)} >
-						<span className="coin-icon"></span>1000
+						<img className="coin-icon" src={coinIcon} alt="coin" /> 1000
 					</button>
 					<button onClick={() => addCoins(5000)} >
-						<span className="coin-icon"></span>5000
+						<img className="coin-icon" src={coinIcon} alt="coin" /> 5000
 					</button>
 					<button onClick={() => addCoins(7500)} >
-						<span className="coin-icon"></span>7500
+						<img className="coin-icon" src={coinIcon} alt="coin" /> 7500
 					</button>
 				</div>
 			</section>
