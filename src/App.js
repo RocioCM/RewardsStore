@@ -8,6 +8,7 @@ import './styles/app.css';
 
 function App() {
 	const [section, setSection] = useState({
+		id: 'electronics',
 		title: 'Electrónica',
 		getProducts: ProductsService.getProducts,
 	});

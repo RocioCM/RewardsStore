@@ -1,4 +1,3 @@
-
 /*--HEADER-BAR--*/
 
 .header-bar {
@@ -15,6 +14,9 @@
 	padding: 0 1rem;
 }
 
+.header-logo {
+	cursor: pointer;
+}
 .user-info {
 	display: flex;
 }
@@ -48,7 +50,8 @@
 }
 
 @media screen and (min-width: 1024px) {
-	.main-logo:hover, .user-info > h3:hover {
+	.main-logo:hover,
+	.user-info > h3:hover {
 		cursor: pointer;
 	}
 	.user-info > h3:first-of-type:hover {

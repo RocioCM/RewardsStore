@@ -13,7 +13,7 @@ function UserInfo() {
 
 	const showHistory = () => {
 		setSection({
-			section: 'history',
+			id: 'history',
 			title: 'Historial',
 			getProducts: UserService.getHistory,
 		});

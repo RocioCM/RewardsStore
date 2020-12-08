@@ -7,12 +7,20 @@ function HomeLogo() {
 	const {setSection} = useContext(AppContext);
 	const handleClick = () => {
 		setSection({
+			id: 'electronics',
 			title: 'Electrónica',
 			getProducts: ProductsService.getProducts,
 		});
 	};
 
-	return <img src={logo} onClick={handleClick} alt='aerolab logo' />;
+	return (
+		<img
+			className='header-logo'
+			src={logo}
+			onClick={handleClick}
+			alt='aerolab logo'
+		/>
+	);
 }
 
 export default HomeLogo;

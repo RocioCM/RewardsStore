@@ -30,7 +30,7 @@ function Card({product}) {
 			onClick={() => setActiveCard(true)}
 			onPointerLeave={() => setActiveCard(false)}
 		>
-			{redeemAllowed || section === 'history' ? (
+			{redeemAllowed || section.id === 'history' ? (
 				<BuyIcon />
 			) : (
 				<div className='coins-left-msg'>
@@ -41,7 +41,7 @@ function Card({product}) {
 			<img src={url} alt={name} />
 			<h4 className='product-category'>{category}</h4>
 			<h4 className='product-name'>{name}</h4>
-			{section !== 'history' && redeemAllowed && (
+			{section.id !== 'history' && redeemAllowed && (
 				<CardOverlay cost={cost} handleClick={redeemProduct} />
 			)}
 		</article>
