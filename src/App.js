@@ -8,12 +8,13 @@ import './styles/app.css';
 
 function App() {
 	const [section, setSection] = useState({
+		id: 'electronics',
 		title: 'Electrónica',
 		getProducts: ProductsService.getProducts,
 	});
 
 	return (
-		<AppProvider context={{setSection}}>
+		<AppProvider context={{section, setSection}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
 			<Gallery section={section} />

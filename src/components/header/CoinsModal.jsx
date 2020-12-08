@@ -1,9 +1,11 @@
 import React, {useContext} from 'react';
-import UserService from '../../services/userService';
-import coinIcon from '../../assets/coin.svg';
-import {coinsAmounts} from '../../services/consts';
-import '../../styles/modals.css';
 import {AppContext} from '../../ContextProvider';
+import UserService from '../../services/userService';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import {coinsAmounts} from '../../services/consts';
+import coinIcon from '../../assets/coin.svg';
+import '../../styles/modals.css';
 
 function CoinsModal({show, handleHide}) {
 	const {updateUserInfo} = useContext(AppContext);
@@ -20,7 +22,7 @@ function CoinsModal({show, handleHide}) {
 		<div className='modal-screen' style={{display: show ? 'initial' : 'none'}}>
 			<section className='modal'>
 				<button className='quit-btn' onClick={handleHide}>
-					X
+					<FontAwesomeIcon icon={faTimes} />
 				</button>
 				<header>
 					<h2>Agregar más monedas</h2>
