@@ -3,15 +3,20 @@ import AppProvider from './ContextProvider';
 import HeaderBar from './components/header/HeaderBar';
 import SectionHeader from './components/header/SectionHeader';
 import Gallery from './components/gallery/Gallery';
+import ProductsService from './services/productsService';
 import './styles/app.css';
 
 function App() {
-	const [section, setSection] = useState({section:"electronics", title:"Electrónica"});
+	const [section, setSection] = useState({
+		title: 'Electrónica',
+		getProducts: ProductsService.getProducts,
+	});
+
 	return (
-		<AppProvider context={{coins: 1000, setSection}}>
+		<AppProvider context={{setSection}}>
 			<HeaderBar />
 			<SectionHeader title={section.title} />
-			<Gallery section={section.section} />
+			<Gallery section={section} />
 		</AppProvider>
 	);
 }

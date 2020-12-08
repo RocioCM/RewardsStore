@@ -13,7 +13,7 @@ function Card({product}) {
 		cost,
 		img: {url},
 	} = product;
-	const {coins, section} = useContext(AppContext);
+	const {coins, section, updateUserInfo} = useContext(AppContext);
 	const [activeCard, setActiveCard] = useState(false);
 	const redeemAllowed = cost <= coins;
 
@@ -21,6 +21,7 @@ function Card({product}) {
 		const resp = await ProductsService.postRedeem(_id);
 		console.log(resp); ///
 		alert('Producto canjeado exitosamente (mentira) :D');
+		updateUserInfo();
 	};
 
 	return (
