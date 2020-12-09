@@ -87,8 +87,7 @@
 .product-card > img {
 	display: block;
 	width: 100%;
-	line-height: 11rem;
-	min-height: 11rem;
+	line-height: 10rem;
 }
 .product-card > .product-category::before {
 	content: '';

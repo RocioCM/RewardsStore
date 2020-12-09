@@ -9,7 +9,7 @@ function FailModal() {
 			</button>
 			<FontAwesomeIcon className='status-icon' icon={faMeteor} />
 			<h3 className='redeem-status'>Falló</h3>
-			<h4 className='redeem-msg'>Oh, tuvimos un problema al canjear</h4>
+			<h4 className='redeem-msg'>Hubo un problema con el canje</h4>
 			<button className='action-btn'>Reintentar</button>
 		</div>
 	);

@@ -1,8 +1,8 @@
 import React, {useState, useContext} from 'react';
 import {AppContext} from '../../ContextProvider';
 import CardOverlay from './CardOverlay';
-import SuccessModal from './SuccessModal';
-import FailModal from './FailModal';
+// import SuccessModal from './SuccessModal';
+// import FailModal from './FailModal';
 import ProductsService from '../../services/productsService';
 import BuyIcon from './BuyIcon';
 import coinIcon from '../../assets/coin.svg';
@@ -30,7 +30,7 @@ function Card({product}) {
 		<article
 			className={`product-card ${activeCard ? 'active' : ''}`}
 			onClick={() => setActiveCard(true)}
-			onPointerLeave={() => setActiveCard(false)}
+			onMouseLeave={() => setActiveCard(false)}
 		>
 			{redeemAllowed || section.id === 'history' ? (
 				<BuyIcon />
@@ -46,8 +46,8 @@ function Card({product}) {
 			{section.id !== 'history' && redeemAllowed && (
 				<CardOverlay cost={cost} handleClick={redeemProduct} />
 			)}
-			<SuccessModal />
-			{/* <FailModal /> */}
+			{/* <SuccessModal />
+			<FailModal /> */}
 		</article>
 	);
 }
