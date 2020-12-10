@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import usePaging from '../../hooks/usePaging';
 import Controls from './Controls';
 import SortControl from './SortControl';
 import Cards from './Cards';
@@ -6,7 +7,17 @@ import '../../styles/gallery.css';
 
 function Gallery({section}) {
 	const [products, setProducts] = useState([]);
-	const [pageParams, setPageParams] = useState({page: 0, total: 0});
+	const {currentItems, currentEnd, currentPage, prevPage, nextPage} = usePaging(
+		products,
+		16
+	);
+	const pageParams = {
+		prevPage,
+		nextPage,
+		currentPage,
+		currentEnd: currentEnd(),
+		totalProducts: products.length,
+	};
 
 	const getSectionProducts = async () => {
 		const products = await section.getProducts();
@@ -19,11 +30,11 @@ function Gallery({section}) {
 
 	return (
 		<section className='main-section'>
-			<Controls pageParams={pageParams}>
+			<Controls {...pageParams}>
 				<SortControl products={products} setProducts={setProducts} />
 			</Controls>
-			<Cards products={products} handlePage={setPageParams} />
-			<Controls pageParams={pageParams} />
+			<Cards products={currentItems()} />
+			<Controls {...pageParams} />
 		</section>
 	);
 }
