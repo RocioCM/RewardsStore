@@ -37,6 +37,8 @@ class UserService {
 				'https://coding-challenge-api.aerolab.co/user/points',
 				params
 			);
+			//'https://coding-challenge-api.aerolab.co/user/points'
+			//'https://private-anon-2c8515b340-aerolabchallenge.apiary-mock.com/user/points'
 			console.log(resp); ///
 			resp = await resp.json();
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
@@ -54,6 +56,8 @@ class UserService {
 				'https://private-anon-20e65f592c-aerolabchallenge.apiary-mock.com/user/history',
 				{headers}
 			);
+			//'https://coding-challenge-api.aerolab.co/user/history'
+			//'https://private-anon-20e65f592c-aerolabchallenge.apiary-mock.com/user/history'
 			resp = await resp.json();
 			console.log(resp); ///
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);

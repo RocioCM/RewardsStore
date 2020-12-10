@@ -38,6 +38,8 @@ class ProductsService {
 				'https://coding-challenge-api.aerolab.co/redeem',
 				params
 			);
+			//'https://coding-challenge-api.aerolab.co/redeem'
+			//'https://private-anon-2c8515b340-aerolabchallenge.apiary-mock.com/redeem'
 			console.log(resp); ///
 			resp = await resp.json();
 			console.log(resp); ///
