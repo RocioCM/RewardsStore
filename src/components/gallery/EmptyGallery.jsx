@@ -8,9 +8,9 @@ function EmptyGallery() {
 			<div className='box-ctn'>
 				<FontAwesomeIcon className='fa-icon' icon={faUserAstronaut} />
 				<h2>Parece que no hay productos aquí</h2>
-				<h3>
+				<h4>
 					¿Piensas que es un error? Prueba <a href='./'>recargar</a> la página
-				</h3>
+				</h4>
 			</div>
 		</section>
 	);

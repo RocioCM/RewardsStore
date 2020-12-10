@@ -95,12 +95,14 @@
 }
 .empty-gallery h2 {
 	font-weight: 500;
+	font-size: 1.8rem;
+	max-width: 30rem;
 	margin: 2rem 1rem 1rem;
 }
-.empty-gallery h3 {
+.empty-gallery h4 {
 	font-weight: 400;
-	font-size: 1rem;
-	max-width: 35rem;
+	font-size: 0.9rem;
+	margin: 0 auto;
 }
 .empty-gallery a {
 	color: gold;

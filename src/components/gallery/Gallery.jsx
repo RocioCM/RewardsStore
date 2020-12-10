@@ -17,7 +17,7 @@ function Gallery({section}) {
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => getSectionProducts(), [section]);
-	products = [];
+
 	return (
 		<section className='main-section'>
 			<Controls pageParams={pageParams}>
