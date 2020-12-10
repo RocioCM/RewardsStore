@@ -9,20 +9,8 @@ function Controls(props) {
 			</span>
 			{children}
 			<div className='arrows-ctn'>
-				<ArrowIcon
-					className='left'
-					handleClick={() => {
-						prevPage();
-						console.log('Para trás trás trás');
-					}}
-				/>
-				<ArrowIcon
-					className='right'
-					handleClick={() => {
-						nextPage();
-						console.log('Ante pa delante');
-					}}
-				/>
+				<ArrowIcon className='left' handleClick={prevPage} />
+				<ArrowIcon className='right' handleClick={nextPage} />
 			</div>
 		</div>
 	);

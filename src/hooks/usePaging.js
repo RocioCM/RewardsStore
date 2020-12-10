@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 function usePaging(items, itemsPerPage) {
 	const [currentPage, setCurrentPage] = useState(1);
-	const maxPage = Math.ceil(items / itemsPerPage);
+	const maxPage = Math.ceil(items.length / itemsPerPage);
 
 	function prevPage() {
 		setCurrentPage((currentPage) => Math.max(1, currentPage - 1));
