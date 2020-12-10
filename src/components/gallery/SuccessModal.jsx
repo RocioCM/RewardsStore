@@ -1,10 +1,10 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faRocket, faTimes} from '@fortawesome/free-solid-svg-icons';
 
-function SuccessModal() {
+function SuccessModal({handleHide}) {
 	return (
 		<div className='modal product-modal success'>
-			<button className='quit-btn'>
+			<button className='quit-btn' onClick={handleHide}>
 				<FontAwesomeIcon icon={faTimes} />
 			</button>
 			<FontAwesomeIcon className='status-icon' icon={faRocket} />
