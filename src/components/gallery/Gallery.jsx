@@ -7,13 +7,14 @@ import '../../styles/gallery.css';
 
 function Gallery({section}) {
 	const [products, setProducts] = useState([]);
-	const {currentItems, currentEnd, prevPage, nextPage} = usePaging(
+	const {currentItems, currentEnd, currentPage, prevPage, nextPage} = usePaging(
 		products,
 		16
 	);
 	const pageParams = {
 		prevPage,
 		nextPage,
+		currentPage,
 		currentEnd: currentEnd(),
 		totalProducts: products.length,
 	};
