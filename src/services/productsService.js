@@ -40,8 +40,9 @@ class ProductsService {
 			);
 			console.log(resp); ///
 			resp = await resp.json();
+			console.log(resp); ///
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
-			return resp;
+			return true;
 		} catch (error) {
 			console.log(error);
 			return false;

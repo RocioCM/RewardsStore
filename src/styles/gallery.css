@@ -87,8 +87,7 @@
 .product-card > img {
 	display: block;
 	width: 100%;
-	line-height: 11rem;
-	min-height: 11rem;
+	line-height: 10rem;
 }
 .product-card > .product-category::before {
 	content: '';
@@ -121,7 +120,7 @@
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
-	z-index: 10;
+	z-index: 5;
 }
 .coin-icon {
 	margin-left: 0.4rem;

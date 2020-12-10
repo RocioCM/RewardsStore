@@ -1,9 +1,11 @@
 import React, {useState, useContext} from 'react';
+import {AppContext} from '../../ContextProvider';
 import CardOverlay from './CardOverlay';
+import SuccessModal from './SuccessModal';
+import FailModal from './FailModal';
+import ProductsService from '../../services/productsService';
 import BuyIcon from './BuyIcon';
 import coinIcon from '../../assets/coin.svg';
-import ProductsService from '../../services/productsService';
-import {AppContext} from '../../ContextProvider';
 
 function Card({product}) {
 	const {
@@ -15,26 +17,31 @@ function Card({product}) {
 	} = product;
 	const {coins, section, updateUserInfo} = useContext(AppContext);
 	const [activeCard, setActiveCard] = useState(false);
+	const [redeemed, setRedeemed] = useState({
+		didRedeem: false,
+		redeemStatus: false,
+	});
 	const redeemAllowed = cost <= coins;
 
 	const redeemProduct = async () => {
 		const resp = await ProductsService.postRedeem(_id);
-		console.log(resp); ///
-		alert('Producto canjeado exitosamente (mentira) :D');
-		updateUserInfo();
+		if (resp) updateUserInfo();
+		setRedeemed({didRedeem: true, redeemStatus: resp});
 	};
+
+	const hideModal = () => setRedeemed({didRedeem: false, redeemStatus: false});
 
 	return (
 		<article
 			className={`product-card ${activeCard ? 'active' : ''}`}
 			onClick={() => setActiveCard(true)}
-			onPointerLeave={() => setActiveCard(false)}
+			onMouseLeave={() => setActiveCard(false)}
 		>
 			{redeemAllowed || section.id === 'history' ? (
 				<BuyIcon />
 			) : (
 				<div className='coins-left-msg'>
-					Necesitas {cost - coins}
+					Te faltan {cost - coins}
 					<img className='coin-icon' src={coinIcon} alt='coin' />
 				</div>
 			)}
@@ -44,6 +51,12 @@ function Card({product}) {
 			{section.id !== 'history' && redeemAllowed && (
 				<CardOverlay cost={cost} handleClick={redeemProduct} />
 			)}
+			{redeemed.didRedeem &&
+				(redeemed.redeemStatus ? (
+					<SuccessModal handleHide={hideModal} />
+				) : (
+					<FailModal handleHide={hideModal} handleRedeem={redeemProduct} />
+				))}
 		</article>
 	);
 }
