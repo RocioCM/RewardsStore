@@ -23,16 +23,16 @@ function Gallery({section}) {
 
 	const getSectionProducts = async () => {
 		const products = await section.getProducts();
-		console.log(products); ///
 		setProducts(products);
-		setLoaded(true);
+		if (!loaded) setLoaded(true);
+		///Add a 'jump to page 1 here';
 	};
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => getSectionProducts(), [section]);
 
 	return (
-		<section className='main-section'>
+		<section id='gallery' className='main-section'>
 			<Controls {...pageParams}>
 				<SortControl products={products} setProducts={setProducts} />
 			</Controls>

@@ -16,14 +16,18 @@ function Controls(props) {
 			</span>
 			{children}
 			<div className='arrows-ctn'>
-				<ArrowIcon
-					className={`left ${currentPage === 1 ? 'hide' : ''}`}
-					handleClick={prevPage}
-				/>
-				<ArrowIcon
-					className={`right ${currentEnd === totalProducts ? 'hide' : ''}`}
-					handleClick={nextPage}
-				/>
+				<a href='#gallery'>
+					<ArrowIcon
+						className={`left ${currentPage === 1 ? 'hide' : ''}`}
+						handleClick={prevPage}
+					/>
+				</a>
+				<a href='#gallery'>
+					<ArrowIcon
+						className={`right ${currentEnd === totalProducts ? 'hide' : ''}`}
+						handleClick={nextPage}
+					/>
+				</a>
 			</div>
 		</div>
 	);
