@@ -1,20 +1,28 @@
 import ArrowIcon from './ArrowIcon';
 
-function Controls({pageParams, children}) {
-	///Los children son los filtritos.
-	///Esto lleva un display flex con space-between.
-	const shownProducts = Math.min(16 * pageParams.page, pageParams.total);
+function Controls(props) {
+	const {
+		prevPage,
+		nextPage,
+		currentPage,
+		currentEnd,
+		totalProducts,
+		children,
+	} = props;
 	return (
 		<div className='controls-bar'>
 			<span className='gallery-paging'>
-				{shownProducts} de {pageParams.total} productos
+				{currentEnd} de {totalProducts} productos
 			</span>
 			{children}
 			<div className='arrows-ctn'>
-				<ArrowIcon className='left' onClick={() => console.log('Next page')} />
 				<ArrowIcon
-					className='right'
-					onClick={() => console.log('Previous page')}
+					className={`left ${currentPage === 1 ? 'hide' : ''}`}
+					handleClick={prevPage}
+				/>
+				<ArrowIcon
+					className={`right ${currentEnd === totalProducts ? 'hide' : ''}`}
+					handleClick={nextPage}
 				/>
 			</div>
 		</div>
