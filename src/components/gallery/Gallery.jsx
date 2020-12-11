@@ -26,7 +26,11 @@ function Gallery({section}) {
 			{products.length === 0 ? (
 				<EmptyGallery />
 			) : (
-				<Cards products={products} handlePage={setPageParams} />
+				<Cards
+					section={section.id}
+					products={products}
+					handlePage={setPageParams}
+				/>
 			)}
 			<Controls pageParams={pageParams} />
 		</section>
