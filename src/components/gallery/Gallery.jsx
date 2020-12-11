@@ -8,6 +8,7 @@ import '../../styles/gallery.css';
 
 function Gallery({section}) {
 	const [products, setProducts] = useState([]);
+	const [loaded, setLoaded] = useState(false);
 	const {currentItems, currentEnd, currentPage, prevPage, nextPage} = usePaging(
 		products,
 		16
@@ -24,6 +25,7 @@ function Gallery({section}) {
 		const products = await section.getProducts();
 		console.log(products); ///
 		setProducts(products);
+		setLoaded(true);
 	};
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,7 +36,7 @@ function Gallery({section}) {
 			<Controls {...pageParams}>
 				<SortControl products={products} setProducts={setProducts} />
 			</Controls>
-			{products.length === 0 ? (
+			{loaded && products.length === 0 ? (
 				<EmptyGallery />
 			) : (
 				<Cards section={section.id} products={currentItems()} />
