@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 import usePaging from '../../hooks/usePaging';
-import Controls from './Controls';
-import SortControl from './SortControl';
+import Controls from './controls/Controls';
+import SortControl from './controls/SortControl';
 import EmptyGallery from './EmptyGallery';
-import Cards from './Cards';
+import Cards from './cards/Cards';
 import '../../styles/gallery.css';
 
 function Gallery({section}) {

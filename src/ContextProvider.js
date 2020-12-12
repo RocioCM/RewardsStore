@@ -8,7 +8,6 @@ function AppProvider({children, context}) {
 
 	const updateUserInfo = async () => {
 		let user = await UserService.getUser();
-		console.log(user); ///
 		setUserInfo({username: user.name, coins: user.points});
 	};
 
