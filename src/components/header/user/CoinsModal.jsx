@@ -1,11 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {AppContext} from '../../../ContextProvider';
 import Modal from '../../general/Modal';
+import CoinsMessage from './CoinsMessage';
 import UserService from '../../../services/userService';
 import {coinsAmounts} from '../../../services/consts';
 import coinIcon from '../../../assets/coin.svg';
 import '../../../styles/modals.css';
-import CoinsMessage from './CoinsMessage';
 
 function CoinsModal({show, handleHide}) {
 	const {updateUserInfo} = useContext(AppContext);

@@ -27,7 +27,8 @@
 	margin-bottom: 1rem;
 }
 
-.modal > .quit-btn {
+.modal > .quit-btn,
+.product-modal > .quit-btn {
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
@@ -39,7 +40,8 @@
 	color: white;
 	font-weight: 800;
 }
-.modal > .quit-btn:hover {
+.modal > .quit-btn:hover,
+.product-modal > .quit-btn:hover {
 	background-color: dodgerblue;
 }
 

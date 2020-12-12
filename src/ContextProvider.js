@@ -14,7 +14,7 @@ function AppProvider({children, context}) {
 		else setUserInfo({username: user.name, coins: user.points});
 	};
 
-	useEffect(() => updateUserInfo(), []); //componentDidMount
+	useEffect(() => updateUserInfo(), []); //as componentDidMount
 
 	return (
 		<AppContext.Provider

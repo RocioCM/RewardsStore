@@ -3,7 +3,7 @@ import {faRocket, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 function SuccessModal({handleHide}) {
 	return (
-		<div className='modal product-modal success'>
+		<div className='product-modal success'>
 			<button className='quit-btn' onClick={handleHide}>
 				<FontAwesomeIcon icon={faTimes} />
 			</button>
