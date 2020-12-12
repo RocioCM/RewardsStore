@@ -5,7 +5,7 @@ import UserService from '../../../services/userService';
 import {coinsAmounts} from '../../../services/consts';
 import coinIcon from '../../../assets/coin.svg';
 import '../../../styles/modals.css';
-import ButtonOverlay from './ButtonOverlay';
+import CoinsMessage from './CoinsMessage';
 
 function CoinsModal({show, handleHide}) {
 	const {updateUserInfo} = useContext(AppContext);
@@ -20,7 +20,7 @@ function CoinsModal({show, handleHide}) {
 
 	return (
 		<Modal className='coins-modal' show={show} handleHide={handleHide}>
-			{addedCoins.status && <ButtonOverlay succeed={addedCoins.succeed} />}
+			{addedCoins.status && <CoinsMessage succeed={addedCoins.succeed} />}
 			<header>
 				<h2>Agregar más monedas</h2>
 			</header>

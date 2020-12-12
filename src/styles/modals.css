@@ -95,7 +95,6 @@
 	grid-template: 1fr / repeat(3, 1fr);
 	gap: 1rem;
 }
-
 .coins-modal .coins-btns-ctn > button {
 	height: 15vh;
 	width: 100%;
@@ -111,12 +110,39 @@
 	transform: translate(-2px, -2px);
 	box-shadow: 5px 5px 8px -2px rgb(180, 180, 180);
 }
-
 .coins-btns-ctn .coin-icon {
 	display: block;
 	margin: 0.3rem auto;
 	height: 2.5rem;
 	width: 2.5rem;
+}
+
+.add-coins-notification {
+	position: fixed;
+	align-self: center;
+	top: 0.5rem;
+	width: 90%;
+	max-width: 700px;
+	background-color: #008eec;
+	color: white;
+	border-radius: 0.5rem;
+	margin-left: -1rem;
+	padding: 1rem 0.7rem;
+}
+.add-coins-notification > .status-icon {
+	display: inline-block;
+	margin-right: 0.7rem;
+}
+.add-coins-notification .message {
+	display: inline-block;
+	font-weight: 400;
+	margin: 0;
+}
+.add-coins-notification.success {
+	background-color: #63e72f;
+}
+.add-coins-notification.error {
+	background-color: rgb(255, 27, 58);
 }
 
 /*--LOAD-ERROR-MODAL--*/
@@ -157,6 +183,9 @@
 @media screen and (min-width: 1024px) {
 	.modal {
 		padding: 2rem;
+	}
+	.add-coins-notification {
+		margin-left: -2rem;
 	}
 	.modal > header > h2 {
 		font-size: 1.8rem;
