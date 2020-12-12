@@ -15,10 +15,8 @@ class ProductsService {
 			);
 			resp = await resp.json();
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
-			console.log(resp); ///
 			return resp;
 		} catch (error) {
-			console.log(error);
 			return [];
 		}
 	};
@@ -28,23 +26,17 @@ class ProductsService {
 			method: 'post',
 			mode: 'cors',
 			headers: this.headers,
-			body: {
-				productId,
-			},
+			body: JSON.stringify({productId}),
 		};
-		console.log(params); ///
 		try {
 			let resp = await fetch(
 				'https://coding-challenge-api.aerolab.co/redeem',
 				params
 			);
-			console.log(resp); ///
 			resp = await resp.json();
-			console.log(resp); ///
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
 			return true;
 		} catch (error) {
-			console.log(error);
 			return false;
 		}
 	};

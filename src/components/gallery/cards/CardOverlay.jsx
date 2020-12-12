@@ -1,4 +1,4 @@
-import coin from '../../assets/coin.svg';
+import coin from '../../../assets/coin.svg';
 
 function CardOverlay({cost, handleClick}) {
 	return (

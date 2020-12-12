@@ -1,11 +1,11 @@
 import {useState, useContext} from 'react';
-import {AppContext} from '../../ContextProvider';
+import {AppContext} from '../../../ContextProvider';
 import CoinsModal from './CoinsModal';
-import coinIcon from '../../assets/coin.svg';
+import coinIcon from '../../../assets/coin.svg';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHistory, faHome} from '@fortawesome/free-solid-svg-icons';
-import UserService from '../../services/userService';
-import ProductsService from '../../services/productsService';
+import UserService from '../../../services/userService';
+import ProductsService from '../../../services/productsService';
 
 function UserInfo() {
 	const {section, setSection, username, coins} = useContext(AppContext);
@@ -50,7 +50,7 @@ function UserInfo() {
 			>
 				<FontAwesomeIcon icon={onHistory ? faHome : faHistory} />
 			</button>
-			<CoinsModal show={showModal} handleHide={hideCoinsModal} />
+			{showModal && <CoinsModal show={true} handleHide={hideCoinsModal} />}
 		</div>
 	);
 }

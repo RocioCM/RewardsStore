@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {filtersParams} from '../../services/consts';
+import {filtersParams} from '../../../services/consts';
 
 function SortControl({products, setProducts}) {
 	const [activeFilter, setActiveFilter] = useState(0);

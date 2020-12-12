@@ -1,4 +1,4 @@
-import UserInfo from './UserInfo';
+import UserInfo from './user/UserInfo';
 import logo from '../../assets/aerolab-logo.svg';
 import '../../styles/header.css';
 

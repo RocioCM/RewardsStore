@@ -1,11 +1,11 @@
 import React, {useState, useContext} from 'react';
-import {AppContext} from '../../ContextProvider';
+import {AppContext} from '../../../ContextProvider';
 import CardOverlay from './CardOverlay';
 import SuccessModal from './SuccessModal';
 import FailModal from './FailModal';
-import ProductsService from '../../services/productsService';
-import BuyIcon from './BuyIcon';
-import coinIcon from '../../assets/coin.svg';
+import ProductsService from '../../../services/productsService';
+import BuyIcon from '../icons/BuyIcon';
+import coinIcon from '../../../assets/coin.svg';
 
 function Card({product}) {
 	const {

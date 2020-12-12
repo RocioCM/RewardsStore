@@ -14,11 +14,10 @@ class UserService {
 				{headers}
 			);
 			resp = await resp.json();
-			// console.log(resp); ///
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
 			return resp;
 		} catch (error) {
-			console.log(error);
+			return false;
 		}
 	};
 
@@ -27,22 +26,17 @@ class UserService {
 			method: 'post',
 			mode: 'cors',
 			headers: this.headers,
-			body: {
-				amount,
-			},
+			body: JSON.stringify({amount}),
 		};
-		console.log(params); ///
 		try {
 			let resp = await fetch(
 				'https://coding-challenge-api.aerolab.co/user/points',
 				params
 			);
-			console.log(resp); ///
 			resp = await resp.json();
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
-			return resp;
+			return true;
 		} catch (error) {
-			console.log(error);
 			return false;
 		}
 	};
@@ -51,15 +45,13 @@ class UserService {
 		const headers = this.headers;
 		try {
 			let resp = await fetch(
-				'https://private-anon-20e65f592c-aerolabchallenge.apiary-mock.com/user/history',
+				'https://coding-challenge-api.aerolab.co/user/history',
 				{headers}
 			);
 			resp = await resp.json();
-			console.log(resp); ///
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
 			return resp;
 		} catch (error) {
-			console.log(error);
 			return [];
 		}
 	};

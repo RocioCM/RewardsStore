@@ -8,7 +8,7 @@ function FailModal({handleHide, handleRedeem}) {
 	};
 
 	return (
-		<div className='modal product-modal fail'>
+		<div className='product-modal fail'>
 			<button className='quit-btn' onClick={handleHide}>
 				<FontAwesomeIcon icon={faTimes} />
 			</button>

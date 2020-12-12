@@ -1,12 +1,14 @@
 import {useState, useEffect} from 'react';
 import usePaging from '../../hooks/usePaging';
-import Controls from './Controls';
-import SortControl from './SortControl';
-import Cards from './Cards';
+import Controls from './controls/Controls';
+import SortControl from './controls/SortControl';
+import EmptyGallery from './EmptyGallery';
+import Cards from './cards/Cards';
 import '../../styles/gallery.css';
 
 function Gallery({section}) {
 	const [products, setProducts] = useState([]);
+	const [loaded, setLoaded] = useState(false);
 	const {currentItems, currentEnd, currentPage, prevPage, nextPage} = usePaging(
 		products,
 		16
@@ -21,19 +23,23 @@ function Gallery({section}) {
 
 	const getSectionProducts = async () => {
 		const products = await section.getProducts();
-		console.log(products); ///
 		setProducts(products);
+		if (!loaded) setLoaded(true);
 	};
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => getSectionProducts(), [section]);
 
 	return (
-		<section className='main-section'>
+		<section id='gallery' className='main-section'>
 			<Controls {...pageParams}>
 				<SortControl products={products} setProducts={setProducts} />
 			</Controls>
-			<Cards products={currentItems()} />
+			{loaded && products.length === 0 ? (
+				<EmptyGallery />
+			) : (
+				<Cards section={section.id} products={currentItems()} />
+			)}
 			<Controls {...pageParams} />
 		</section>
 	);
