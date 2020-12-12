@@ -15,7 +15,7 @@ class UserService {
 			);
 			resp = await resp.json();
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
-			return resp;
+			return true;
 		} catch (error) {
 			return false;
 		}
