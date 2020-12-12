@@ -50,7 +50,7 @@ function UserInfo() {
 			>
 				<FontAwesomeIcon icon={onHistory ? faHome : faHistory} />
 			</button>
-			<CoinsModal show={showModal} handleHide={hideCoinsModal} />
+			{showModal && <CoinsModal show={true} handleHide={hideCoinsModal} />}
 		</div>
 	);
 }

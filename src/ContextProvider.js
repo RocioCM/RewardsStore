@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import ErrorModal from './components/general/ErrorModal';
 import UserService from './services/userService';
 
 const AppContext = React.createContext();
 
 function AppProvider({children, context}) {
 	const [userInfo, setUserInfo] = useState({username: '', coins: 0});
+	const [userError, setUserError] = useState(false); //Turns true if user fetch fails.
 
 	const updateUserInfo = async () => {
 		let user = await UserService.getUser();
-		setUserInfo({username: user.name, coins: user.points});
+		if (!user) setUserError(true);
+		else setUserInfo({username: user.name, coins: user.points});
 	};
 
 	useEffect(() => updateUserInfo(), []); //componentDidMount
@@ -22,6 +25,9 @@ function AppProvider({children, context}) {
 				...context,
 			}}
 		>
+			{userError && (
+				<ErrorModal show={true} handleHide={() => setUserError(false)} />
+			)}
 			{children}
 		</AppContext.Provider>
 	);

@@ -1,5 +1,32 @@
 /*--GENERAL-MODAL--*/
 
+.modal-screen {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(70, 70, 70, 0.7);
+}
+
+.modal {
+	width: 90%;
+	max-width: 700px;
+	background-color: rgb(248, 248, 248);
+	border-radius: 10px;
+	padding: 1rem 1rem 2rem;
+	margin: 5rem auto 0;
+	position: relative;
+}
+
+.modal > header > h2 {
+	font-size: 1.3rem;
+	font-weight: 400;
+	line-height: 2rem;
+	margin-bottom: 1rem;
+}
+
 .modal > .quit-btn {
 	position: absolute;
 	top: 1rem;
@@ -63,32 +90,6 @@
 
 /*--COINS-MODAL--*/
 
-.modal-screen {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(70, 70, 70, 0.7);
-}
-
-.coins-modal {
-	width: 90%;
-	max-width: 700px;
-	background-color: rgb(248, 248, 248);
-	border-radius: 10px;
-	padding: 1rem 1rem 2rem;
-	margin: 5rem auto 0;
-	position: relative;
-}
-
-.coins-modal > header > h2 {
-	font-size: 1.3rem;
-	font-weight: 400;
-	line-height: 2rem;
-	margin-bottom: 1rem;
-}
-
 .coins-modal .coins-btns-ctn {
 	display: grid;
 	grid-template: 1fr / repeat(3, 1fr);
@@ -118,11 +119,46 @@
 	width: 2.5rem;
 }
 
+/*--LOAD-ERROR-MODAL--*/
+
+.load-error-modal > .modal-body {
+	font-size: 1.1rem;
+}
+.load-error-modal > footer {
+	text-align: right;
+}
+
+.load-error-modal .error-icon {
+	font-size: 5rem;
+	color: #0ad4fa;
+	opacity: 0.3;
+	position: absolute;
+	margin: 0.5rem 1rem;
+}
+.load-error-modal a.btn {
+	padding: 0.5rem 0.7rem;
+	border-radius: 5px;
+	color: white;
+	background-color: #63e72f;
+}
+.load-error-modal a.btn:hover {
+	opacity: 0.8;
+}
+
+@media screen and (min-width: 600px) {
+	.load-error-modal .error-icon {
+		position: initial;
+		float: left;
+		margin: 0rem 1rem;
+		opacity: 1;
+	}
+}
+
 @media screen and (min-width: 1024px) {
-	.coins-modal {
+	.modal {
 		padding: 2rem;
 	}
-	.coins-modal > header > h2 {
+	.modal > header > h2 {
 		font-size: 1.8rem;
 	}
 	.coins-modal .coins-btns-ctn > button {

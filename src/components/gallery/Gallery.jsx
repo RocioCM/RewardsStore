@@ -25,7 +25,6 @@ function Gallery({section}) {
 		const products = await section.getProducts();
 		setProducts(products);
 		if (!loaded) setLoaded(true);
-		///Add a 'jump to page 1 here';
 	};
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps

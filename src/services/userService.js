@@ -17,7 +17,7 @@ class UserService {
 			if (resp.error) throw new Error(`Fetch failed: ${resp.error}`);
 			return resp;
 		} catch (error) {
-			console.log(error);
+			return false;
 		}
 	};
 
